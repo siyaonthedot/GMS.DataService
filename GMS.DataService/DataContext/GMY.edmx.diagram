@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8dd1d589141d42edb0b14b0623479ddd" Name="Diagram1">
+        <EntityTypeShape EntityType="gymModel.Audit" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.Branch" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.Business" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.Club" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.Equipment" Width="1.5" PointX="9.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.Function" Width="1.5" PointX="13" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.Login" Width="1.5" PointX="10.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.MemberAttendency" Width="1.5" PointX="7.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.Member" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.MemberShipType" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.Role" Width="1.5" PointX="7.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.SecondaryMember" Width="1.5" PointX="5.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.Status" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.Store" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.sysdiagram" Width="1.5" PointX="11.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.Title" Width="1.5" PointX="10.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.UserFunction" Width="1.5" PointX="15.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.UserRole" Width="1.5" PointX="10" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="gymModel.User" Width="1.5" PointX="13" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="gymModel.FK_Branch_Business" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_Members_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_Members_Club" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_UserFunctions_Functions" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_Users_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_MemberAttendency_MemberAttendency" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_Members_Members" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_Members_MemberShipType" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_Members_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_UserRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_Users_Title" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_UserFunctions_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="gymModel.FK_UserRoles_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

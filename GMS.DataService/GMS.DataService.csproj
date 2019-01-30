@@ -43,11 +43,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,6 +77,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <EntityDeploy Include="DataContext\GMY.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GMY.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataContext\GMY.edmx.diagram">
+      <DependentUpon>GMY.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,10 +92,100 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataContext\GMY.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GMY.edmx</DependentUpon>
+      <LastGenOutput>GMY.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataContext\GMY.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GMY.edmx</DependentUpon>
+      <LastGenOutput>GMY.cs</LastGenOutput>
+    </Content>
+    <Content Include="GymService.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContext\Audit.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Branch.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Business.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Club.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Equipment.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Function.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\GMY.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GMY.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\GMY.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\GMY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GMY.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Login.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Member.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\MemberAttendency.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\MemberShipType.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Role.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\SecondaryMember.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Status.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Store.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\sysdiagram.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\Title.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\User.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\UserFunction.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContext\UserRole.cs">
+      <DependentUpon>GMY.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GymService.asmx.cs">
+      <DependentUpon>GymService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
